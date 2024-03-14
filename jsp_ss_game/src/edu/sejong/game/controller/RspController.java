@@ -10,19 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.sejong.game.command.Command;
-import edu.sejong.game.command.LottoListCommand;
+import edu.sejong.game.command.RspResultCommand;
 
 /**
  * Servlet implementation class lottoController
  */
-@WebServlet("/lotto/*")
-public class LottoController extends HttpServlet {
+@WebServlet("/rsp/*")
+public class RspController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LottoController() {
+    public RspController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -58,11 +58,13 @@ public class LottoController extends HttpServlet {
 		System.out.println("contextPath : " + contextPath);
 		System.out.println("comm : " + comm);
 		
-		if(comm.equals("/lotto/list.do")) {
-			command = new LottoListCommand();
+		if(comm.equals("/rsp/result.do")) {
+			command = new RspResultCommand();
 			command.execute(request, response);
 			
-			viewPage = "/lotto_list.jsp";
+			viewPage = "/rsp_game.jsp";
+		}else if(comm.equals("/rsp/rsp_game")) {
+			viewPage = "/rsp/result.do";
 		}
 		
 		if(viewPage != null) {

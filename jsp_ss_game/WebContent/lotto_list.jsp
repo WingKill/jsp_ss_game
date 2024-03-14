@@ -25,7 +25,7 @@
 		<nav class="navbar navbar-expand-lg bg-body-tertiary"
 			data-bs-theme="dark">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#">게임사이트</a>
+				<a class="navbar-brand" href="#">게임 사이트</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -34,22 +34,15 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page"
-							href="${pageContext.request.contextPath}/lotto/list.do">로또</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Action</a></li>
-								<li><a class="dropdown-item" href="#">Another action</a></li>
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item" href="#">Something else
-										here</a></li>
-							</ul></li>
-						<li class="nav-item"><a class="nav-link disabled"
-							aria-disabled="true">Disabled</a></li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/lotto/list.do">로또</a>
+						</li>
+						<li class="nav-item">
+                            <a class="nav-link" href="${pageContext.request.contextPath}/rsp/rsp_game">가위바위보</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="${pageContext.request.contextPath}/board/list.do">게시판</a>
+                        </li>
 					</ul>
 					<form class="d-flex" role="search">
 						<input class="form-control me-2" type="search"
@@ -65,35 +58,27 @@
 			<div class="row">
 				<c:forEach var="num" items="${lotto.arrList}">
 					<div class="col-lg-2 mt-3 d-flex justify-content-center">
-						<svg class="rounded-circle" width="140" height="140"
-							focusable="false">
-	              <rect width="100%" height="100%"
-								fill="${lotto.getBackground(num)}" />
-	              <text text-anchor="middle" x="50%" y="50%" fill="white"
-								dy=".3em" font-size="60">${num}</text>
-	            </svg>
+						<svg class="rounded-circle" width="140" height="140" focusable="false">
+					       	<rect width="100%" height="100%" fill="${lotto.getBackground(num)}" />
+							<text text-anchor="middle" x="50%" y="50%" fill="white" dy=".3em" font-size="60">${num}</text>
+			            </svg>
 					</div>
 				</c:forEach>
 			</div>
 			<div class="row">
 				<div class="col-lg-12 mt-3 d-flex justify-content-center">
-					<svg class="rounded-circle" width="140" height="140"
-						focusable="false">
-		              <rect width="100%" height="100%" fill="white" />
-		              <text text-anchor="middle" x="50%" y="50%" fill="black"
-								dy=".3em" font-size="60">+</text>
+					<svg class="rounded-circle" width="140" height="140" focusable="false">
+				       	<rect width="100%" height="100%" fill="${lotto.getBackground(num)}" />
+						<text text-anchor="middle" x="50%" y="50%" fill="white" dy=".3em" font-size="60">+</text>
 		            </svg>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-12 mt-3 d-flex justify-content-center">
-					<svg class="rounded-circle" width="140" height="140"
-						focusable="false">
-		              <rect width="100%" height="100%"
-								fill="${lotto.getBackground(lotto.getBonusNum())}" />
-		              <text text-anchor="middle" x="50%" y="50%" fill="white"
-								dy=".3em" font-size="60">${lotto.bonusNum}</text>
-	            	</svg>
+					<svg class="rounded-circle" width="140" height="140" focusable="false">
+				       	<rect width="100%" height="100%" fill="${lotto.getBackground(lotto.getBonusNum())}" />
+						<text text-anchor="middle" x="50%" y="50%" fill="white" dy=".3em" font-size="60">${lotto.bonusNum}</text>
+		            </svg>				
 				</div>
 			</div>
 

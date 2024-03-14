@@ -8,21 +8,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+ 
 import edu.sejong.game.command.Command;
-import edu.sejong.game.command.LottoListCommand;
+import edu.sejong.game.command.board.BoardDeleteCommand;
+import edu.sejong.game.command.board.BoardListCommand;
+import edu.sejong.game.command.board.BoardSelectCommand;
+import edu.sejong.game.command.board.BoardUpdateCommand;
 
 /**
  * Servlet implementation class lottoController
  */
-@WebServlet("/lotto/*")
-public class LottoController extends HttpServlet {
+@WebServlet("/board/*")
+public class BoardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LottoController() {
+    public BoardController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -58,11 +61,26 @@ public class LottoController extends HttpServlet {
 		System.out.println("contextPath : " + contextPath);
 		System.out.println("comm : " + comm);
 		
-		if(comm.equals("/lotto/list.do")) {
-			command = new LottoListCommand();
+		if(comm.equals("/board/list.do")) {
+			command = new BoardListCommand();
 			command.execute(request, response);
 			
-			viewPage = "/lotto_list.jsp";
+			viewPage = "/board_list.jsp";
+		}else if(comm.equals("/board/delete.do")) {
+			command = new BoardDeleteCommand();
+			command.execute(request, response);
+			
+			viewPage = "/board/list.do";
+		}else if(comm.equals("/board/update.select")) {
+			command = new BoardSelectCommand();
+			command.execute(request, response);
+			
+			viewPage = "/board_update.jsp";
+		}else if(comm.equals("/board/update.do")) {
+			command = new BoardUpdateCommand();
+			command.execute(request, response);
+			
+			viewPage = "/board/list.do";
 		}
 		
 		if(viewPage != null) {
