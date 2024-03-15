@@ -133,7 +133,7 @@ public class BoardDao {
 		return boardList;
 	}
 	
-	public BoardVo selectBoard(String bidStr) {		
+	public BoardVo contentView(String bidStr) {		
 		boardUpdateHit(bidStr);
 		
 		Connection conn = null; 

@@ -56,7 +56,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table table-bordered text-center align-middle" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>                                      
                                     <th>No.</th>
@@ -77,7 +77,7 @@
                                     <th>Delete</th>
                                 </tr>
                             </tfoot>
-                            <tbody>
+                            <tbody >
                                <c:forEach var="board" items="${boards}">
                                	<tr>
 	                            	<td>${board.bid}</td>
@@ -85,7 +85,7 @@
 		                                <c:forEach begin="1" end="${board.bindent}">
 		                                    [Re]
 		                                </c:forEach>
-		                                <a href="${pageContext.request.contextPath}/board/update.select?bid=${board.bid}" class="text-decoration-none text-dark">${board.btitle}</a>
+		                                <a href="${pageContext.request.contextPath}/board/update_view.do?bid=${board.bid}" class="text-decoration-none text-dark">${board.btitle}</a>
 	                             	</td>
                                   	<td>${board.bname}</td>										
                                   	<td>${board.listbdate}</td>

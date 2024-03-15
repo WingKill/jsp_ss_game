@@ -57,7 +57,11 @@
 	                </div>
 	                <div class="card-body p-5">
 	                   <p class="my-2"> Type </p> 
-	                   <p class="my-2"><input class="w-100 bg-success text-white rounded border-dark-subtle" type="text" value="자유 게시판" readonly="readonly"></p>
+	                   <p class="my-2">
+	                   	<select class="w-100 bg-secondary text-white rounded border-dark-subtle" type="text" readonly="readonly">
+	                   		<option value="1">자유 게시판</option>
+	                   	</select>
+	                   </p>
 	                   <p class="my-2">BoardID</p>
 	                   <p class="my-2"><input class="w-100 bg-secondary text-white rounded border-dark-subtle" type="text" name="bid" value="${board.bid}" readonly="readonly"></p>
 	                   <p class="my-2">이름</p>

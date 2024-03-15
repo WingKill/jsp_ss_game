@@ -68,8 +68,8 @@
 			<div class="row">
 				<div class="col-lg-12 mt-3 d-flex justify-content-center">
 					<svg class="rounded-circle" width="140" height="140" focusable="false">
-				       	<rect width="100%" height="100%" fill="${lotto.getBackground(num)}" />
-						<text text-anchor="middle" x="50%" y="50%" fill="white" dy=".3em" font-size="60">+</text>
+				       	<rect width="100%" height="100%" fill="white" />
+						<text text-anchor="middle" x="50%" y="50%" fill="black" dy=".3em" font-size="60">+</text>
 		            </svg>
 				</div>
 			</div>

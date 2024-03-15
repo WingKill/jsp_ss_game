@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import edu.sejong.game.command.Command;
 import edu.sejong.game.command.board.BoardDeleteCommand;
 import edu.sejong.game.command.board.BoardListCommand;
-import edu.sejong.game.command.board.BoardSelectCommand;
+import edu.sejong.game.command.board.BoardContentCommand;
 import edu.sejong.game.command.board.BoardUpdateCommand;
 
 /**
@@ -71,8 +71,8 @@ public class BoardController extends HttpServlet {
 			command.execute(request, response);
 			
 			viewPage = "/board/list.do";
-		}else if(comm.equals("/board/update.select")) {
-			command = new BoardSelectCommand();
+		}else if(comm.equals("/board/update_view.do")) {
+			command = new BoardContentCommand();
 			command.execute(request, response);
 			
 			viewPage = "/board_update.jsp";

@@ -7,13 +7,13 @@ import edu.sejong.game.command.Command;
 import edu.sejong.game.dao.BoardDao;
 import edu.sejong.game.vo.BoardVo;
 
-public class BoardSelectCommand implements Command {
+public class BoardContentCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		String bidStr = request.getParameter("bid");
 		BoardDao dao = new BoardDao();
-		BoardVo board = dao.selectBoard(bidStr);
+		BoardVo board = dao.contentView(bidStr);
 		request.setAttribute("board", board);
 	}
 }
