@@ -79,9 +79,32 @@
             </div>
         </div>
     </main>
-    <footer class="text-center">
-        <hr>
-        <p>© Company 2022-2023</p>
+    <footer class="text-center ">
+    	<hr>
+    	<div class="d-flex justify-content-evenly">
+	    	<div class="col">
+	    	</div>
+	        <div class="col align-middle">
+	        	<p>© Company 2023-2024 </p>
+	        </div>
+	        <div class="col">
+	        	<p id="nowDate" class=" border p-1 rounded bg-info text-white"></p>
+	        </div>
+	        <script>
+				function time(){
+					let nowDate = new Date();
+					let nowHour = nowDate.getHours();
+					let nowMinute = nowDate.getMinutes();
+					let nowSecond = nowDate.getSeconds();
+					
+					let dateStr = "현재 시각 : "+ nowHour + "시 " + nowMinute + "분 " + nowSecond + "초";
+					
+					let nowDateElement = document.getElementById("nowDate");				
+					nowDateElement.innerHTML = dateStr;
+				}			
+				setInterval(time,1000);
+		    </script>
+		</div>
     </footer>
 </body>
 
